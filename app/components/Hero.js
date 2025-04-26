@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <div className="relative isolate overflow-hidden min-h-screen">
+    <div className="relative isolate md:overflow-hidden overflow-visible md:min-h-screen min-h-[600px] bg-[#2B8AF2]">
       {/* Background SVG */}
       <div className="absolute inset-0 -z-10">
         <Image
@@ -17,31 +17,55 @@ export default function Hero() {
         />
       </div>
 
-      <div className="mx-auto max-w-7xl px-6 pt-32 pb-24 sm:pt-40 sm:pb-32 lg:pt-48 flex flex-col items-center text-center">
+      <div className="mx-auto max-w-7xl px-6 pt-16 md:pt-20 pb-16 flex flex-col items-center text-center relative z-10">
         {/* AI Service Pill */}
-        <div className="ai-service-pill flex justify-center items-center px-4 py-2 gap-2.5 rounded-[99px] border border-white/10 mb-12 text-lg font-light text-white">
-          AI powered marketing service
+        <div className="ai-service-pill flex justify-center items-center px-8 py-2.5 rounded-[99px] bg-white/20 backdrop-blur-[20px] mt-8 mb-10 text-base font-light text-white">
+          Human Crafted, AI-Enhanced
         </div>
 
         {/* Main Heading */}
-        <h1 className="max-w-4xl text-4xl font-medium tracking-tight text-white sm:text-6xl mb-6">
-          We Fill Your Website With Content That Fuels Your Growth And{' '}
-          <span className="text-gray-900">Boosts Your Revenue</span>
-        </h1>
+        <div className="max-w-[320px] md:max-w-[1200px] mx-auto">
+          <h1 className="text-white text-center font-geist text-[42px] md:text-[64px] font-semibold leading-[110%] tracking-[-1.2px] md:tracking-[-2.72px] capitalize mb-8">
+            <span className="md:hidden">
+              AI-enhanced growth marketing <span className="text-black">for your startup</span>
+            </span>
+            <span className="hidden md:inline">
+              AI-enhanced growth marketing
+              <br />
+              <span className="text-black">for your startup</span>
+            </span>
+          </h1>
+        </div>
 
         {/* Subtitle */}
-        <p className="max-w-2xl text-lg leading-8 text-white/90 mb-10">
-          AI-enhanced growth marketing to craft content that captivates, converts, and 
-          scales your business sustainably with expert precision.
+        <p className="max-w-[300px] md:max-w-2xl text-[18px] leading-[150%] text-white/90 mb-12">
+          Our proven growth marketing SEO strategies leverage fine tuned AI models to assists our writers and growth marketers in authority building and the crafting of content that scales your business sustainably.
         </p>
 
         {/* CTA Button */}
         <Link
           href="/contact"
-          className="strategy-button-shadow flex justify-center items-center px-6 py-3 gap-2.5 rounded-[99px] bg-white border border-[#78B8F0] text-black text-[18px] font-normal leading-[150%] tracking-[-0.36px] hover:bg-white/90 transition-colors font-[family-name:var(--font-geist-sans)]"
+          className="strategy-button-shadow flex justify-center items-center px-8 py-4 gap-2.5 rounded-[99px] bg-white text-black text-[18px] font-normal leading-[150%] hover:bg-white/90 transition-colors shadow-[0_8px_16px_rgba(0,0,0,0.1)] mb-16"
         >
           Let's Talk Strategy
         </Link>
+
+        {/* Mobile Grey Overlap Section */}
+        <div className="block md:hidden absolute left-0 right-0 bottom-[-50px] h-[100px] bg-[#EBEEF1] rounded-t-[32px] z-20" />
+
+        {/* Analytics Dashboard Image */}
+        <div className="relative w-full hidden md:block" style={{ height: '340px' }}>
+          <div className="absolute left-1/2 -translate-x-1/2 bottom-[-160px] w-[90%] max-w-[1200px] z-30">
+            <Image
+              src="/herograph.png"
+              alt="Analytics dashboard"
+              width={1200}
+              height={600}
+              className="w-full"
+              priority
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

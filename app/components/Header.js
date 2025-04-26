@@ -17,15 +17,15 @@ export default function Header() {
 
   return (
     <header className="absolute w-full z-50">
-      <nav className="mx-auto flex items-center justify-between px-6 py-4" aria-label="Global">
+      <nav className="mx-auto flex items-center justify-between px-8 lg:px-12 py-6" aria-label="Global">
         {/* Logo */}
         <div className="flex-shrink-0">
           <Link href="/" className="flex items-center">
             <Image
               src="/clutchclick-whitelogo copy.png"
               alt="ClutchClick"
-              width={140}
-              height={40}
+              width={180}
+              height={50}
               priority
             />
           </Link>
@@ -33,12 +33,12 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex flex-1 justify-center">
-          <div className="flex items-center gap-x-1">
+          <div className="flex items-center gap-x-2">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="px-4 py-2 text-sm font-medium text-white hover:text-white/90 rounded-full bg-white/10"
+                className="px-5 py-2.5 text-base font-medium text-white hover:text-white/90"
               >
                 {item.name}
               </Link>
@@ -50,7 +50,7 @@ export default function Header() {
         <div className="hidden md:block">
           <Link
             href="/contact"
-            className="rounded-full bg-blue-400/70 px-5 py-2 text-sm font-medium text-white hover:bg-blue-400/60"
+            className="px-6 py-2.5 text-base font-medium text-white hover:text-white/80"
           >
             Contact
           </Link>
@@ -60,7 +60,7 @@ export default function Header() {
         <div className="md:hidden">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="rounded-full bg-white/10 p-2 text-white hover:bg-white/20"
+            className="p-2 text-white hover:text-white/80"
           >
             <span className="sr-only">Open main menu</span>
             {!isMenuOpen ? (
@@ -78,13 +78,13 @@ export default function Header() {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-blue-600/95 backdrop-blur-sm">
-          <div className="space-y-1 px-4 pb-3 pt-2">
+        <div className="md:hidden bg-blue-600">
+          <div className="space-y-1 px-6 pb-4 pt-3">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="block px-4 py-2 text-base font-medium text-white hover:bg-white/10 rounded-full"
+                className="block px-5 py-2.5 text-lg font-medium text-white hover:bg-white/10"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
@@ -92,7 +92,7 @@ export default function Header() {
             ))}
             <Link
               href="/contact"
-              className="block px-4 py-2 mt-2 text-base font-medium text-white bg-blue-400/70 hover:bg-blue-400/60 rounded-full"
+              className="block px-5 py-2.5 mt-3 text-lg font-medium text-white bg-blue-400 hover:bg-blue-500"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
