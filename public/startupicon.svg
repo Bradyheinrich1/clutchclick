@@ -1,0 +1,29 @@
+<svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_ii_77_273)">
+<rect width="68" height="68" rx="20" fill="url(#paint0_radial_77_273)"/>
+<rect x="0.5" y="0.5" width="67" height="67" rx="19.5" stroke="#68B8FF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M36.3303 15.8044C37.009 16.099 37.4122 16.8058 37.3205 17.54L35.888 28.9999H49C49.6467 28.9999 50.235 29.374 50.5093 29.9597C50.7836 30.5453 50.6944 31.2368 50.2804 31.7336L33.6137 51.7336C33.14 52.302 32.3484 52.4901 31.6697 52.1954C30.991 51.9008 30.5878 51.194 30.6795 50.4599L32.112 38.9999H19C18.3533 38.9999 17.765 38.6258 17.4907 38.0402C17.2164 37.4546 17.3056 36.7631 17.7196 36.2663L34.3863 16.2663C34.86 15.6979 35.6516 15.5098 36.3303 15.8044Z" fill="white"/>
+</g>
+<defs>
+<filter id="filter0_ii_77_273" x="0" y="-4" width="68" height="74" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="2"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_77_273"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="-4"/>
+<feGaussianBlur stdDeviation="4"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.12 0"/>
+<feBlend mode="normal" in2="effect1_innerShadow_77_273" result="effect2_innerShadow_77_273"/>
+</filter>
+<radialGradient id="paint0_radial_77_273" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(34 -4.97869) rotate(90) scale(72.9787)">
+<stop stop-color="#5BB3FF"/>
+<stop offset="1" stop-color="#0088FF"/>
+</radialGradient>
+</defs>
+</svg>
