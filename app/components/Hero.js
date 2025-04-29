@@ -23,24 +23,27 @@ export default function Hero() {
           Human Crafted, AI-Enhanced
         </div>
 
-        {/* Main Heading */}
-        <div className="max-w-[320px] md:max-w-[1200px] mx-auto">
-          <h1 className="text-white text-center font-geist text-[42px] md:text-[64px] font-semibold leading-[110%] tracking-[-1.2px] md:tracking-[-2.72px] capitalize mb-8">
-            <span className="md:hidden">
-              AI-enhanced growth marketing <span className="text-black">for your startup</span>
-            </span>
-            <span className="hidden md:inline">
-              AI-enhanced growth marketing
-              <br />
-              <span className="text-black">for your startup</span>
-            </span>
-          </h1>
-        </div>
+        {/* Hero Text with minimal horizontal gap on mobile only */}
+        <div className="w-full px-[5px] md:px-0">
+          {/* Main Heading */}
+          <div className="max-w-full md:max-w-[1200px] mx-auto">
+            <h1 className="text-white text-center font-geist text-[42px] md:text-[64px] font-semibold leading-[110%] tracking-[-1.2px] md:tracking-[-2.72px] capitalize mb-8">
+              <span className="md:hidden">
+                AI-enhanced growth marketing <span className="text-black">for your startup</span>
+              </span>
+              <span className="hidden md:inline">
+                AI-enhanced growth marketing
+                <br />
+                <span className="text-black">for your startup</span>
+              </span>
+            </h1>
+          </div>
 
-        {/* Subtitle */}
-        <p className="max-w-[300px] md:max-w-2xl text-[18px] leading-[150%] text-white/90 mb-12">
-          Our proven growth marketing SEO strategies leverage fine tuned AI models to assists our writers and growth marketers in authority building and the crafting of content that scales your business sustainably.
-        </p>
+          {/* Subtitle */}
+          <p className="max-w-full md:max-w-2xl text-[18px] leading-[150%] text-white/90 mb-12 mx-auto">
+            Our proven growth marketing SEO strategies leverage fine tuned AI models to assists our writers and growth marketers in authority building and the crafting of content that scales your business sustainably.
+          </p>
+        </div>
 
         {/* CTA Button */}
         <Link

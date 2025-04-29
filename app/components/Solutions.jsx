@@ -31,11 +31,11 @@ const solutions = [
 const Solutions = () => {
   return (
     <section className="py-16 bg-[#ebeef1]">
-      <div className="container mx-auto px-8 max-w-7xl">
+      <div className="container mx-auto px-6 max-w-6xl">
         <div className="flex flex-col items-center mb-10">
           <div className="inline-flex items-center gap-2 bg-white rounded-full px-4 py-2 mb-6 shadow-lg">
             <span className="inline-block w-5 h-5 bg-[#f5f6fa] rounded-full flex items-center justify-center">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#f5c518"/></svg>
+              <Image src="/solutionsbulb.svg" alt="Solutions icon" width={18} height={18} />
             </span>
             <span className="text-[#303133] font-geist text-[15px] font-normal">Solutions</span>
           </div>
@@ -46,9 +46,9 @@ const Solutions = () => {
             Whether you're scaling a startup, running a local business, or managing an e-commerce brand — we've got you covered.
           </p>
         </div>
-        <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-4 justify-center items-stretch">
           {solutions.map((sol, idx) => (
-            <div key={sol.title} className="flex-1 p-8 flex flex-col items-start text-left min-w-[260px] max-w-sm mx-auto">
+            <div key={sol.title} className="flex-1 p-6 flex flex-col items-start text-left min-w-[220px] max-w-[280px] mx-auto">
               <div className="mb-6">
                 <Image src={sol.icon} alt={sol.title + ' icon'} width={48} height={48} className="w-12 h-12" />
               </div>
