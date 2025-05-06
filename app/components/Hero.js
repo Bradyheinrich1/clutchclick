@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { TypeAnimation } from 'react-type-animation';
+import CalendlyLink from './CalendlyLink';
 
 export default function Hero() {
   return (
@@ -27,14 +29,42 @@ export default function Hero() {
         <div className="w-full px-[5px] md:px-0">
           {/* Main Heading */}
           <div className="max-w-full md:max-w-[1200px] mx-auto">
-            <h1 className="text-white text-center font-geist text-[42px] md:text-[64px] font-semibold leading-[110%] tracking-[-1.2px] md:tracking-[-2.72px] capitalize mb-8">
+            <h1 className="text-white text-center font-geist text-[42px] md:text-[77px] font-semibold leading-[110%] tracking-[-1.2px] md:tracking-[-2.72px] capitalize mb-8">
               <span className="md:hidden">
-                AI-enhanced growth marketing <span className="text-black">for your startup</span>
+                Organic growth solutions <span className="text-black">
+                  <TypeAnimation
+                    sequence={[
+                      'for your startup',
+                      3000,
+                      'for your brand',
+                      3000,
+                      'for your local business',
+                      3000,
+                    ]}
+                    wrapper="span"
+                    speed={30}
+                    repeat={Infinity}
+                  />
+                </span>
               </span>
               <span className="hidden md:inline">
-                AI-enhanced growth marketing
+                Organic growth solutions
                 <br />
-                <span className="text-black">for your startup</span>
+                <span className="text-black">
+                  <TypeAnimation
+                    sequence={[
+                      'for your startup',
+                      3000,
+                      'for your brand',
+                      3000,
+                      'for your local business',
+                      3000,
+                    ]}
+                    wrapper="span"
+                    speed={30}
+                    repeat={Infinity}
+                  />
+                </span>
               </span>
             </h1>
           </div>
@@ -46,12 +76,9 @@ export default function Hero() {
         </div>
 
         {/* CTA Button */}
-        <Link
-          href="/contact"
-          className="strategy-button-shadow flex justify-center items-center px-8 py-4 gap-2.5 rounded-[99px] bg-white text-black text-[18px] font-normal leading-[150%] hover:bg-white/90 transition-colors shadow-[0_8px_16px_rgba(0,0,0,0.1)] mb-16"
-        >
+        <CalendlyLink className="strategy-button-shadow flex justify-center items-center px-8 py-4 gap-2.5 rounded-[99px] bg-white text-black text-[18px] font-normal leading-[150%] hover:bg-white/90 transition-colors shadow-[0_8px_16px_rgba(0,0,0,0.1)] mb-16">
           Let's Talk Strategy
-        </Link>
+        </CalendlyLink>
 
         {/* Mobile Grey Overlap Section */}
         <div className="block md:hidden absolute left-0 right-0 bottom-[-50px] h-[100px] bg-[#EBEEF1] rounded-t-[32px] z-20" />

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import CalendlyLink from './CalendlyLink';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,12 +49,11 @@ export default function Header() {
 
         {/* Contact Button */}
         <div className="hidden md:block">
-          <Link
-            href="/contact"
-            className="px-6 py-2.5 text-base font-medium text-white hover:text-white/80"
+          <CalendlyLink
+            className="strategy-button-shadow flex justify-center items-center px-6 py-2.5 rounded-[99px] bg-white text-black text-base font-medium hover:bg-white/90 transition-colors"
           >
-            Contact
-          </Link>
+            Get in Touch
+          </CalendlyLink>
         </div>
 
         {/* Mobile menu button */}
@@ -90,13 +90,12 @@ export default function Header() {
                 {item.name}
               </Link>
             ))}
-            <Link
-              href="/contact"
-              className="block px-5 py-2.5 mt-3 text-lg font-medium text-white bg-blue-400 hover:bg-blue-500"
+            <CalendlyLink
+              className="block px-5 py-2.5 mt-3 text-lg font-medium text-white bg-white text-black rounded-[99px] hover:bg-white/90 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Contact
-            </Link>
+              Get in Touch
+            </CalendlyLink>
           </div>
         </div>
       )}

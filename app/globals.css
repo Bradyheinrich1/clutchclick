@@ -20,7 +20,7 @@
 }
 
 body {
-  background: var(--background);
+  background: #ebeef1;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -36,4 +36,23 @@ body {
               0px 91px 54px 0px rgba(45, 32, 105, 0.15),
               0px 40px 40px 0px rgba(45, 32, 105, 0.26),
               0px 10px 22px 0px rgba(45, 32, 105, 0.29);
+}
+
+@media (max-width: 767px) {
+  .cta-icon-mobile {
+    width: 90px !important;
+    height: 90px !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1299px) {
+  .cta-icon-tablet {
+    width: 170px !important;
+    height: 170px !important;
+  }
+}
+@media (min-width: 1300px) {
+  .cta-icon-desktop {
+    width: 270px !important;
+    height: 270px !important;
+  }
 }
