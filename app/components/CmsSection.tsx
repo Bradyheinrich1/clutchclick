@@ -1,4 +1,8 @@
+"use client";
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 const CmsSection = () => {
   const cmsLogos = [
@@ -10,8 +14,20 @@ const CmsSection = () => {
     { name: 'Squarespace', src: '/cmslogos/squarespacelogo.svg', alt: 'Squarespace Logo' },
   ];
 
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   return (
-    <section className="w-full py-24 bg-[#ebeef1]">
+    <motion.section
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      transition={{
+        opacity: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+        y: { duration: 0.9, ease: [0.22, 1, 0.36, 1] }
+      }}
+      className="w-full py-24 bg-[#ebeef1]"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
@@ -96,7 +112,7 @@ const CmsSection = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

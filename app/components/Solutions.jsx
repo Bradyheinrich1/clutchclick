@@ -1,5 +1,9 @@
+"use client";
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 const solutions = [
   {
@@ -29,8 +33,20 @@ const solutions = [
 ];
 
 const Solutions = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   return (
-    <section className="py-16 bg-[#ebeef1]">
+    <motion.section
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      transition={{
+        opacity: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+        y: { duration: 0.9, ease: [0.22, 1, 0.36, 1] }
+      }}
+      className="py-16 bg-[#ebeef1]"
+    >
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="flex flex-col items-center mb-10">
           <div className="inline-flex items-center gap-2 bg-white rounded-full px-4 py-2 mb-6 shadow-lg">
@@ -61,7 +77,7 @@ const Solutions = () => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

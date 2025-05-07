@@ -56,3 +56,10 @@ body {
     height: 270px !important;
   }
 }
+
+@media (max-width: 800px) {
+  .bg-position-mobile {
+    object-position: center 85% !important;
+    transform: scaleY(1.2);
+  }
+}

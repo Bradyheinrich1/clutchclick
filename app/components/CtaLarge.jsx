@@ -1,16 +1,32 @@
+"use client";
 import Image from 'next/image';
 import CalendlyLink from './CalendlyLink';
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 export default function CtaLarge() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   return (
-    <section className="relative overflow-hidden rounded-[32px] md:rounded-[32px] mx-2 md:mx-8 my-8 md:my-16 shadow-xl">
+    <motion.section
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      transition={{
+        opacity: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+        y: { duration: 0.9, ease: [0.22, 1, 0.36, 1] }
+      }}
+      className="relative overflow-hidden rounded-[32px] md:rounded-[32px] mx-2 md:mx-8 my-8 md:my-16 shadow-xl"
+    >
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <Image
           src="/ctaSymbols/clutchclickbg.svg"
           alt="CTA Background"
           fill
-          className="object-cover"
+          className="object-cover bg-position-mobile"
+          style={{ objectPosition: 'center 75%' }}
           priority
         />
       </div>
@@ -48,6 +64,6 @@ export default function CtaLarge() {
           Let's Talk Strategy
         </CalendlyLink>
       </div>
-    </section>
+    </motion.section>
   );
 } 

@@ -1,9 +1,24 @@
+"use client";
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 export default function WhyChooseUs() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   return (
-    <section className="py-12 px-4 bg-[#ebeef1]">
-      <div className="max-w-4xl mx-auto text-center">
+    <motion.section
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      transition={{
+        opacity: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+        y: { duration: 0.9, ease: [0.22, 1, 0.36, 1] }
+      }}
+      className="py-12 px-4 bg-[#ebeef1]"
+    >
+      <div className="max-w-6xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 bg-white rounded-full px-4 py-2 mb-4 shadow-lg">
           <Image
             src="/whyusbookmark.svg"
@@ -22,37 +37,37 @@ export default function WhyChooseUs() {
         </h2>
 
         {/* Grid of 4 PNGs */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <Image
             src="/growthslides/aispeed-humanprecision.png"
             alt="AI Speed and Human Precision"
-            width={500}
-            height={300}
-            className="w-full"
+            width={800}
+            height={480}
+            className="w-full rounded-lg transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-xl"
           />
           <Image
             src="/growthslides/datadrivenstrat.png"
             alt="Data-Driven Strategy"
-            width={500}
-            height={300}
-            className="w-full"
+            width={800}
+            height={480}
+            className="w-full rounded-lg transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-xl"
           />
           <Image
             src="/growthslides/fullvizwhychoose.png"
             alt="Full Visibility"
-            width={500}
-            height={300}
-            className="w-full"
+            width={800}
+            height={480}
+            className="w-full rounded-lg transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-xl"
           />
           <Image
             src="/growthslides/builttoscalewithyou.png"
             alt="Built to Scale With You"
-            width={500}
-            height={300}
-            className="w-full"
+            width={800}
+            height={480}
+            className="w-full rounded-lg transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-xl"
           />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 } 
