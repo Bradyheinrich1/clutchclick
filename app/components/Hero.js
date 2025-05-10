@@ -7,7 +7,7 @@ import CalendlyLink from './CalendlyLink';
 
 export default function Hero() {
   return (
-    <div className="relative isolate md:overflow-hidden overflow-visible md:min-h-screen min-h-[600px] bg-[#2B8AF2]">
+    <div className="relative isolate md:overflow-hidden overflow-visible md:min-h-screen min-h-[600px] bg-[#2B8AF2] -mt-[125px]">
       {/* Background SVG */}
       <div className="absolute inset-0 -z-10">
         <Image
@@ -21,7 +21,7 @@ export default function Hero() {
 
       <div className="mx-auto max-w-7xl px-6 pt-16 md:pt-20 pb-16 flex flex-col items-center text-center relative z-10">
         {/* AI Service Pill */}
-        <div className="ai-service-pill flex justify-center items-center px-8 py-2.5 rounded-[99px] bg-white/20 backdrop-blur-[20px] mt-8 mb-10 text-base font-light text-white">
+        <div className="ai-service-pill flex justify-center items-center px-8 py-2.5 rounded-[99px] bg-white/20 backdrop-blur-[20px] mt-[100px] mb-10 text-base font-light text-white">
           Human Crafted, AI-Enhanced
         </div>
 

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { TypeAnimation } from 'react-type-animation';
 
 const LinkFeatures = () => {
   const ref = useRef(null);
@@ -31,17 +32,33 @@ const LinkFeatures = () => {
                 height={20}
                 className="w-5 h-5"
               />
-              <span className="text-[#303133] font-geist text-[15px] font-normal">Authority building & link outreach</span>
+              <span className="text-[#303133] font-geist text-[15px] font-normal">AI platform mentions & citations</span>
             </div>
             
             <h2 className="text-[42px] font-semibold mb-3 font-geist leading-[106%] tracking-[-1.92px] text-[#303133] md:text-[42px] md:tracking-[-1.92px] text-[32px] tracking-[-1.28px]">
-              AI-Enhanced Link
+              Get your brand mentioned
               <br />
-              Building that <span className="text-blue-500">Boosts Rankings</span>
+              by <span className="text-blue-500">
+                <TypeAnimation
+                  sequence={[
+                    'ChatGPT',
+                    3000,
+                    'Perplexity',
+                    3000,
+                    'Google AI Overviews',
+                    3000,
+                    'Microsoft Copilot',
+                    3000,
+                  ]}
+                  wrapper="span"
+                  speed={30}
+                  repeat={Infinity}
+                />
+              </span>
             </h2>
             
             <p className="font-geist text-[16px] leading-[150%] tracking-[-0.48px] text-[#757880] font-normal mb-8">
-              We don't just create content — we build authority.
+              We don't just create content — we ensure your brand gets mentioned in AI responses.
             </p>
 
             {/* Feature List */}
@@ -59,9 +76,9 @@ const LinkFeatures = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-geist text-[18px] font-semibold leading-[150%] tracking-[-0.72px] text-[#303133] mb-1">Smart Opportunity Discovery</h3>
+                  <h3 className="font-geist text-[18px] font-semibold leading-[150%] tracking-[-0.72px] text-[#303133] mb-1">AI-Optimized Content Strategy</h3>
                   <p className="font-geist text-[16px] leading-[150%] tracking-[-0.48px] text-[#757880] font-normal">
-                    AI identifies backlink targets with high domain authority and relevance.
+                    We craft content specifically designed to be cited by AI platforms, ensuring your brand appears in relevant responses.
                   </p>
                 </div>
               </div>
@@ -79,9 +96,9 @@ const LinkFeatures = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-geist text-[18px] font-semibold leading-[150%] tracking-[-0.72px] text-[#303133] mb-1">Scalable Outreach Campaigns</h3>
+                  <h3 className="font-geist text-[18px] font-semibold leading-[150%] tracking-[-0.72px] text-[#303133] mb-1">Authority Building</h3>
                   <p className="font-geist text-[16px] leading-[150%] tracking-[-0.48px] text-[#757880] font-normal">
-                    Our team handles outreach, content placement, and relationship building.
+                    We establish your brand as a trusted source that AI platforms consistently reference for accurate information.
                   </p>
                 </div>
               </div>
@@ -99,9 +116,9 @@ const LinkFeatures = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-geist text-[18px] font-semibold leading-[150%] tracking-[-0.72px] text-[#303133] mb-1">Zero-Waste Authority Growth</h3>
+                  <h3 className="font-geist text-[18px] font-semibold leading-[150%] tracking-[-0.72px] text-[#303133] mb-1">Cross-Platform Visibility</h3>
                   <p className="font-geist text-[16px] leading-[150%] tracking-[-0.48px] text-[#757880] font-normal">
-                    Every link we earn is vetted to support long-term SEO performance.
+                    Our strategies ensure your brand gets mentioned across ChatGPT, Perplexity, Google AI, and Microsoft Copilot.
                   </p>
                 </div>
               </div>
@@ -109,10 +126,10 @@ const LinkFeatures = () => {
           </div>
 
           {/* Image Section */}
-          <div className="w-full md:flex-1 relative flex items-center justify-center pt-8 md:pt-0 order-2 md:order-1 md:mt-[-20px]">
+          <div className="w-full md:flex-1 relative flex items-center justify-center pt-8 md:pt-0 order-2 md:order-1 md:mt-[20px]">
             <div className="relative w-[calc(100%-20px)] max-w-[900px] md:max-w-[1250px] flex items-center justify-center">
               <Image
-                src="/linkbuildinggraphic.svg"
+                src="/AEOserviceIcon.svg"
                 alt="Link Building Features Illustration"
                 width={1250}
                 height={1250}

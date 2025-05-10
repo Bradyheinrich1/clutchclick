@@ -49,153 +49,174 @@ export default function Header() {
   }
 
   return (
-    <header className="absolute w-full z-50">
-      <nav className="mx-auto flex items-center justify-between px-8 lg:px-12 py-6" aria-label="Global">
-        {/* Logo */}
-        <div className="flex-shrink-0">
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/clutchclick-whitelogo copy.png"
-              alt="ClutchClick"
-              width={180}
-              height={50}
-              priority
-            />
-          </Link>
-        </div>
-
-        {/* Desktop Navigation - right aligned */}
-        <div className="hidden md:flex flex-1 justify-end">
-          <div className="flex items-center gap-x-2 relative mr-8">
-            {/* Solutions Dropdown - best practice wrapper */}
-            <div
-              className="relative"
-              onMouseEnter={() => {
-                clearTimeout(solutionsTimeout.current);
-                setIsSolutionsOpen(true);
-              }}
-              onMouseLeave={() => {
-                solutionsTimeout.current = setTimeout(() => setIsSolutionsOpen(false), 120);
-              }}
-            >
-              <button
-                ref={solutionsButtonRef}
-                className="px-5 py-2.5 text-lg font-medium text-white hover:text-white/90 flex items-center gap-1"
-                aria-haspopup="menu"
-                aria-expanded={isSolutionsOpen}
-                aria-controls="solutions-menu"
-                type="button"
-                tabIndex={0}
-                onKeyDown={handleSolutionsKeyDown}
-                onClick={() => setIsSolutionsOpen((open) => !open)}
-              >
-                Solutions
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
-              </button>
-              {isSolutionsOpen && (
-                <div
-                  id="solutions-menu"
-                  ref={solutionsMenuRef}
-                  role="menu"
-                  aria-label="Solutions submenu"
-                  className="absolute left-1/2 -translate-x-1/2 mt-2 w-[216px] bg-white rounded-md shadow-lg z-50"
-                >
-                  {solutions.map((item, idx) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className="flex items-center gap-3 px-6 py-3 my-1 text-gray-900 hover:bg-gray-100 text-base"
-                      role="menuitem"
-                      tabIndex={0}
-                      onClick={() => setIsSolutionsOpen(false)}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Escape') setIsSolutionsOpen(false);
-                        if (e.key === 'Tab' && idx === solutions.length - 1) setIsSolutionsOpen(false);
-                      }}
-                    >
-                      <Image src={item.icon} alt="" width={28} height={28} className="shrink-0" />
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
+    <header className="sticky top-0 w-full z-50">
+      <div className="max-w-7xl mx-auto px-8">
+        <div className="bg-gradient-to-br from-[#2B8AF2] via-[#1790FF] to-cyan-300 p-[4px] rounded-[32px] mt-4 shadow-2xl" style={{boxShadow: '0 8px 32px 0 rgba(23, 144, 255, 0.18), 0 1.5px 8px 0 rgba(0,0,0,0.10)'}}>
+          <nav className="mx-auto flex items-center justify-between px-8 lg:px-12 py-6 bg-gradient-to-br from-[#2B8AF2] to-[#1790FF] rounded-[28px]" aria-label="Global">
+            {/* Logo */}
+            <div className="flex-shrink-0">
+              <Link href="/" className="flex items-center">
+                <Image
+                  src="/clutchclick-whitelogo copy.png"
+                  alt="ClutchClick"
+                  width={180}
+                  height={50}
+                  priority
+                />
+              </Link>
             </div>
-            {/* Plans & Pricing */}
-            <Link
-              href="/pricing"
-              className="px-5 py-2.5 text-lg font-medium text-white hover:text-white/90"
-            >
-              Plans & Pricing
-            </Link>
-          </div>
-        </div>
 
-        {/* Contact Button */}
-        <div className="hidden md:block">
-          <CalendlyLink
-            className="strategy-button-shadow flex justify-center items-center px-6 py-2.5 rounded-[99px] bg-white text-black text-base font-medium hover:bg-white/90 transition-colors"
-          >
-            Get in Touch
-          </CalendlyLink>
-        </div>
-
-        {/* Mobile menu button */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2 text-white hover:text-white/80"
-          >
-            <span className="sr-only">Open main menu</span>
-            {!isMenuOpen ? (
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
-            ) : (
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            )}
-          </button>
-        </div>
-      </nav>
-
-      {/* Mobile menu */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-blue-600">
-          <div className="space-y-1 px-6 pb-4 pt-3">
-            {/* Solutions with sub-links */}
-            <div>
-              <span className="block px-5 py-2.5 text-lg font-medium text-white">Solutions</span>
-              <div className="pl-4">
-                {solutions.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="block px-5 py-2 text-base font-medium text-white hover:bg-white/10"
-                    onClick={() => setIsMenuOpen(false)}
+            {/* Desktop Navigation - right aligned */}
+            <div className="hidden md:flex flex-1 justify-end">
+              <div className="flex items-center gap-x-2 relative mr-8">
+                {/* Solutions Dropdown - best practice wrapper */}
+                <div
+                  className="relative"
+                  onMouseEnter={() => {
+                    clearTimeout(solutionsTimeout.current);
+                    setIsSolutionsOpen(true);
+                  }}
+                  onMouseLeave={() => {
+                    solutionsTimeout.current = setTimeout(() => setIsSolutionsOpen(false), 120);
+                  }}
+                >
+                  <button
+                    ref={solutionsButtonRef}
+                    className="px-5 py-2.5 text-lg font-medium text-white hover:text-white/90 flex items-center gap-1"
+                    aria-haspopup="menu"
+                    aria-expanded={isSolutionsOpen}
+                    aria-controls="solutions-menu"
+                    type="button"
+                    tabIndex={0}
+                    onKeyDown={handleSolutionsKeyDown}
+                    onClick={() => setIsSolutionsOpen((open) => !open)}
                   >
-                    {item.name}
-                  </Link>
-                ))}
+                    Solutions
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                  </button>
+                  {isSolutionsOpen && (
+                    <div
+                      id="solutions-menu"
+                      ref={solutionsMenuRef}
+                      role="menu"
+                      aria-label="Solutions submenu"
+                      className="absolute left-1/2 -translate-x-1/2 mt-2 w-[216px] bg-white rounded-md shadow-lg z-50"
+                    >
+                      {solutions.map((item, idx) => (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          className="flex items-center gap-3 px-6 py-3 my-1 text-gray-900 hover:bg-gray-100 text-base"
+                          role="menuitem"
+                          tabIndex={0}
+                          onClick={() => setIsSolutionsOpen(false)}
+                          onKeyDown={(e) => {
+                            if (e.key === 'Escape') setIsSolutionsOpen(false);
+                            if (e.key === 'Tab' && idx === solutions.length - 1) setIsSolutionsOpen(false);
+                          }}
+                        >
+                          <Image src={item.icon} alt="" width={28} height={28} className="shrink-0" />
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                {/* Plans & Pricing */}
+                <Link
+                  href="/pricing"
+                  className="px-5 py-2.5 text-lg font-medium text-white hover:text-white/90"
+                >
+                  Plans & Pricing
+                </Link>
               </div>
             </div>
-            {/* Plans & Pricing */}
-            <Link
-              href="/pricing"
-              className="block px-5 py-2.5 text-lg font-medium text-white hover:bg-white/10"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Plans & Pricing
-            </Link>
-            <CalendlyLink
-              className="block px-5 py-2.5 mt-3 text-lg font-medium text-center bg-white text-black rounded-[99px] hover:bg-white/90 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Get in Touch
-            </CalendlyLink>
-          </div>
+
+            {/* Contact Button */}
+            <div className="hidden md:block">
+              <CalendlyLink
+                className="header-button-shadow flex justify-center items-center px-6 py-2.5 rounded-[99px] bg-white text-black text-base font-medium hover:bg-white/90 transition-colors"
+              >
+                Get in Touch
+              </CalendlyLink>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="p-2 text-white hover:text-white/80"
+              >
+                <span className="sr-only">Open main menu</span>
+                {!isMenuOpen ? (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                  </svg>
+                ) : (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                )}
+              </button>
+            </div>
+          </nav>
         </div>
-      )}
+
+        {/* Mobile menu */}
+        {isMenuOpen && (
+          <>
+            {/* Blurred overlay */}
+            <div
+              className="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm"
+              onClick={() => setIsMenuOpen(false)}
+              aria-hidden="true"
+            />
+            {/* Mobile menu */}
+            <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90vw] max-w-sm bg-[#2B8AF2] rounded-[30px] shadow-2xl">
+              {/* Close (X) button */}
+              <button
+                className="absolute top-4 right-[56px] text-white hover:text-white/80 text-4xl focus:outline-none"
+                onClick={() => setIsMenuOpen(false)}
+                aria-label="Close menu"
+              >
+                &times;
+              </button>
+              <div className="space-y-1 px-6 pb-4 pt-3">
+                {/* Solutions with sub-links */}
+                <div>
+                  <span className="block px-5 py-2.5 text-lg font-medium text-white">Solutions</span>
+                  <div className="pl-4">
+                    {solutions.map((item) => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        className="block px-5 py-2 text-base font-medium text-white hover:bg-white/10"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                {/* Plans & Pricing */}
+                <Link
+                  href="/pricing"
+                  className="block px-5 py-2.5 text-lg font-medium text-white hover:bg-white/10"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Plans & Pricing
+                </Link>
+                <CalendlyLink
+                  className="block px-5 py-2.5 mt-3 text-lg font-medium text-center bg-white text-black rounded-[99px] hover:bg-white/90 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Get in Touch
+                </CalendlyLink>
+              </div>
+            </div>
+          </>
+        )}
+      </div>
     </header>
   );
 } 

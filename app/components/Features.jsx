@@ -31,7 +31,7 @@ const Features = () => {
                 height={20}
                 className="w-5 h-5"
               />
-              <span className="text-[#303133] font-geist text-[15px] font-normal">How we do it</span>
+              <span className="text-[#303133] font-geist text-[15px] font-normal">AI-Powered SEO & Link Building</span>
             </div>
             
             <h2 className="text-[42px] font-semibold mb-3 font-geist leading-[106%] tracking-[-1.92px] text-[#303133] md:text-[42px] md:tracking-[-1.92px] text-[32px] tracking-[-1.28px]">
@@ -81,10 +81,9 @@ const Features = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-geist text-[18px] font-semibold leading-[150%] tracking-[-0.72px] text-[#303133] mb-1">Engaging, Authoritative Content</h3>
+                  <h3 className="font-geist text-[18px] font-semibold leading-[150%] tracking-[-0.72px] text-[#303133] mb-1">Smart Link Building Campaigns</h3>
                   <p className="font-geist text-[16px] leading-[150%] tracking-[-0.48px] text-[#757880] font-normal">
-                    AI creates first drafts, but our experts refine every word to ensure
-                    clarity, credibility, and performance.
+                    We leverage AI to discover high-value backlink opportunities and execute scalable outreach, ensuring every link supports long-term SEO growth.
                   </p>
                 </div>
               </div>

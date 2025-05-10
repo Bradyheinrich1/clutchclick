@@ -38,6 +38,10 @@ body {
               0px 10px 22px 0px rgba(45, 32, 105, 0.29);
 }
 
+.header-button-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 @media (max-width: 767px) {
   .cta-icon-mobile {
     width: 90px !important;
